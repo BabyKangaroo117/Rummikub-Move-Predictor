@@ -13,7 +13,7 @@ screen_width, screen_height = display_info.current_w, display_info.current_h
 screen = pygame.display.set_mode((screen_width, screen_height), pygame.RESIZABLE)
 clock = pygame.time.Clock()
 
-test_surface = pygame.Surface((200, 200))
+tile_surface = pygame.image.load('graphics/rummikub-tile.png')
 
 while True:
     # poll for events
@@ -28,9 +28,8 @@ while True:
             screen = pygame.display.set_mode((new_w, new_h), pygame.RESIZABLE)
 
         # fill the screen with a color to wipe away anything from last frame
-    screen.fill("purple")
-    test_surface.fill("blue")
-    screen.blit(test_surface, (0, 0))
+    screen.fill("skyblue")
+    screen.blit(tile_surface, (0, 0))
 
     # flip() the display to put your work on screen
     pygame.display.update()
